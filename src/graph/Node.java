@@ -1,6 +1,7 @@
 package graph;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import sae.dungeon.Coord;
@@ -22,12 +23,15 @@ public class Node {
 	}
 	
 	public void addNeighbourg(Node noeud) {
-		
+		neighbors.add(noeud);
 	}
 
 	@Override
 	public String toString() {
-		return "Node [name=" + name + ", neighbors=" + neighbors + ", coord=" + coord + "]";
+		return "Node [name=" + name 
+				+ ", neighbors=" + neighbors 
+				+ ", coord=" + coord 
+				+ "]";
 		//auto génération
 	}
 
@@ -39,9 +43,25 @@ public class Node {
 		return coord;
 	}
 	
-	public boolean equals(Object objet) {
-		return false;
-		
+	@Override
+	public boolean equals(Object object) {
+		if (this == object) {
+			return true;
+		}
+		if(!(object instanceof Node )) {
+			return false;
+		}// vérifie que l'objet est un Node
+		Node node = (Node) object;//cast d'acces
+		return Objects.equals(name, node.name)
+				&& Objects.equals(coord, node.coord);//vérifie que les infos des noeuds sont égal
 	}
+	
+	/* 
+	@Override
+	public int hashCode() {
+    	return Objects.hash(name);
+	}
+	//stack overflow recommande mais jsp a quoi sa sert donc suspendue
+	*/
 	
 }
