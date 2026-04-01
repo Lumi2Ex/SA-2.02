@@ -1,5 +1,6 @@
 package solver;
 
+import graph.Graph;
 import graph.Node;
 
 public abstract class SolverGeneric implements Solver{
@@ -10,9 +11,9 @@ public abstract class SolverGeneric implements Solver{
     
     private GraphSoluce GraphSoluce;
     
-    public SolverGeneric(Node Node) {
-    	this.startingNode = startingNode;
-        this.endingNode = endingNode;
+    public SolverGeneric(Node start, Node end) {
+    	this.startingNode = start;
+        this.endingNode = end;
         this.steps = 0;
         this.GraphSoluce = new GraphSoluce();
     }
