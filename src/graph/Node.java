@@ -13,7 +13,7 @@ public class Node {
 	public Node(String name, Coord coord) {
         this.name = name;
         this.coord = coord;
-        this.neighbors = new HashSet<>(); //je sais pas a quoi cela sert
+        this.neighbors = new HashSet<>(); //WARNING Hashset
     }
 	
 	public Set<Node> neighbors(){
@@ -29,7 +29,7 @@ public class Node {
 		return "Node [name=" + name 
 				+ ", neighbors=" + neighbors 
 				+ ", coord=" + coord 
-				+ "]";
+				+ "]"; 
 		//auto génération
 	}
 
@@ -53,11 +53,13 @@ public class Node {
 		return Objects.equals(name, node.name)
 				&& Objects.equals(coord, node.coord);//vérifie que les infos des noeuds sont égal
 	}
-	/* 
+
+	
+	//stack overflow recommande mais jsp a quoi sa sert donc ...
 	@Override
 	public int hashCode() {
     	return Objects.hash(name);
 	}
-	//stack overflow recommande mais jsp a quoi sa sert donc suspendue
-	*/
+	
+	
 }

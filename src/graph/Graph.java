@@ -1,5 +1,6 @@
 package graph;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Graph {
@@ -11,7 +12,7 @@ public class Graph {
 	private Set<Node> nodes;//remplace List, aparament similaire en évitant les doublon automatiquement.
 	
 	Graph() {
-		
+		this.nodes = new HashSet<>();
 	}
 	
 	public void addNode(Node node) {
