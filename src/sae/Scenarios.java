@@ -10,13 +10,13 @@ import java.util.logging.SimpleFormatter;
 import sae.dungeon.Dungeon;
 import sae.dungeon.DungeonBuilder;
 import sae.dungeon.DungeonSoluce;
-import sae.graph.GraphSoluce;
-import sae.graph.Node;
-import sae.solver.Solver;
-import sae.solver.SolverWithAstar;
-import sae.solver.SolverWithBFS;
-import sae.solver.SolverWithDFS;
-import sae.transform.Dungeon2Graph;
+import solver.GraphSoluce;
+import graph.Node;
+import solver.Solver;
+import solver.SolverWithAstar;
+import solver.SolverWithBFS;
+import solver.SolverWithDFS;
+import transform.Dungeon2Graph;
 
 public class Scenarios {
 

@@ -1,31 +1,48 @@
 package solver;
 
-public abstract class SolverGeneric {
-	Node startingNode = new Node();
-	Node endingNode = new Node();
-	
-	int steps;
-	
-	public SolverGeneric(Node start, Node end);
-	
-	public GraphSoluce getGraphSoluce();
+import graph.Node;
 
-	public Node getStartingNode() {
-		return startingNode;
-	}
+public abstract class SolverGeneric implements Solver{
 
-	public Node getEndingNode() {
-		return endingNode;
-	}
+    private Node startingNode;
+    private Node endingNode;
+    private int steps;
 
-	public int getSteps() {
-		return steps;
-	}
-	
-	public void solve();
-	
-	protected void resolve();
-	
-	private initializeResolution();
-	
+    public SolverGeneric(Node start, Node end) {
+        this.startingNode = start;
+        this.endingNode = end;
+    }
+    
+    public GraphSoluce getGraphSoluce() {
+    	return (GraphSoluce)null;
+    }
+    
+    public int getSteps() {
+        return steps;
+    }
+    
+    public void incSteps() {
+    	steps++;
+    }
+    
+    public Node getStartingNode() {
+        return startingNode;
+    }
+
+    public Node getEndingNode() {
+        return endingNode;
+    }
+
+    public void solve() {
+        initializeResolution();
+        solve();
+    }
+
+    protected void resolve() {
+    	return;
+    }
+    
+    private void initializeResolution() {
+        this.steps = 0;
+    }
 }
