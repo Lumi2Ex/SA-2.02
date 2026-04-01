@@ -22,7 +22,7 @@ public class Node {
 		return neighbors;
 	}
 	
-	public void addNeighbourg(Node noeud) {
+	public void addNeighbors(Node noeud) {
 		neighbors.add(noeud);
 	}
 
