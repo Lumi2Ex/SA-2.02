@@ -77,8 +77,8 @@ public class Scenarios {
 		
 	}
 
-	private static void solveWithSolver(Dungeon2Graph mapping, Solver solver) {
-		logger.info(() -> "Résolution avec " + solver);
+	private static void solveWithSolver(Dungeon2Graph mapping, SolverGeneric solver) {
+		logger.info(() -> "Résolution avec " + SolverGeneric);
 
 		long startingTime = System.currentTimeMillis();
 		
@@ -94,7 +94,7 @@ public class Scenarios {
 		
 		logger.info("Solution   => " + soluceDonjonBFS.getSoluce());
 		logger.info(() ->  "Temps (ms) => " + duration);
-		logger.info(() -> "Steps      => " + solver.getSteps());
+		logger.info(() -> "Steps      => " + SolverGeneric.getSteps());
 		logger.info(() -> "---------------------------");
 	}
 
