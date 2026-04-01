@@ -1,22 +1,22 @@
 package solver;
-
+import java.util.ArrayList;
 import java.util.List;
-
 import graph.Node;
 
 public class GraphSoluce {
 	
 	private List<Node> soluce; 
 	
+	// FIXME : remplir constructeur
 	public GraphSoluce() {
-	
+		this.soluce = new ArrayList<>();
 	}
 	
 	public void add(Node node) {
-		soluce.add(node);
+		this.soluce.add(node);
 	}
 	
 	public List<Node> getSoluce() {
-		return soluce;
+		return this.soluce;
 	}
 }

@@ -7,42 +7,49 @@ public abstract class SolverGeneric implements Solver{
     private Node startingNode;
     private Node endingNode;
     private int steps;
-
-    public SolverGeneric(Node start, Node end) {
-        this.startingNode = start;
-        this.endingNode = end;
+    
+    private GraphSoluce GraphSoluce;
+    
+    public SolverGeneric(Node Node) {
+    	this.startingNode = startingNode;
+        this.endingNode = endingNode;
+        this.steps = 0;
+        this.GraphSoluce = new GraphSoluce();
     }
     
+   @Override 
     public GraphSoluce getGraphSoluce() {
-    	return (GraphSoluce)null;
+    	return this.GraphSoluce;
     }
     
+   @Override
     public int getSteps() {
-        return steps;
+        return this.steps;
     }
     
     public void incSteps() {
-    	steps++;
+    	this.steps++;
     }
     
     public Node getStartingNode() {
-        return startingNode;
+        return this.startingNode;
     }
 
     public Node getEndingNode() {
-        return endingNode;
+        return this.endingNode;
     }
-
+    
+    @Override
     public void solve() {
         initializeResolution();
         solve();
     }
 
-    protected void resolve() {
-    	return;
-    }
+    protected abstract void resolve();
     
     private void initializeResolution() {
         this.steps = 0;
+        this.GraphSoluce = new GraphSoluce();
+        // Additional initialization logic here
     }
 }
