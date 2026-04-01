@@ -4,8 +4,6 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import sae.dungeon.Coord;
-
 public class Node {
 	
 	private String name;
@@ -15,7 +13,7 @@ public class Node {
 	public Node(String name, Coord coord) {
         this.name = name;
         this.coord = coord;
-        this.neighbors = new HashSet<>();
+        this.neighbors = new HashSet<>(); //je sais pas a quoi cela sert
     }
 	
 	public Set<Node> neighbors(){
@@ -55,7 +53,6 @@ public class Node {
 		return Objects.equals(name, node.name)
 				&& Objects.equals(coord, node.coord);//vérifie que les infos des noeuds sont égal
 	}
-	
 	/* 
 	@Override
 	public int hashCode() {
@@ -63,5 +60,4 @@ public class Node {
 	}
 	//stack overflow recommande mais jsp a quoi sa sert donc suspendue
 	*/
-	
 }

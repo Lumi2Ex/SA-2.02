@@ -33,4 +33,8 @@ public class Graph {
 	public String toString() {
 		return "Graph []";
 	}
+	
+	public Set<Node> getNodes() {
+		return nodes;
+	}
 }

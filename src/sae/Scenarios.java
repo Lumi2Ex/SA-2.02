@@ -7,16 +7,16 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+import graph.Node;
 import sae.dungeon.Dungeon;
 import sae.dungeon.DungeonBuilder;
 import sae.dungeon.DungeonSoluce;
-import solver.GraphSoluce;
-import graph.Node;
-import solver.Solver;
-import solver.SolverWithAstar;
-import solver.SolverWithBFS;
-import solver.SolverWithDFS;
-import transform.Dungeon2Graph;
+import sae.graph.GraphSoluce;
+import sae.solver.Solver;
+import sae.solver.SolverWithAstar;
+import sae.solver.SolverWithBFS;
+import sae.solver.SolverWithDFS;
+import sae.transform.Dungeon2Graph;
 
 public class Scenarios {
 
@@ -77,8 +77,8 @@ public class Scenarios {
 		
 	}
 
-	private static void solveWithSolver(Dungeon2Graph mapping, SolverGeneric solver) {
-		logger.info(() -> "Résolution avec " + SolverGeneric);
+	private static void solveWithSolver(Dungeon2Graph mapping, Solver solver) {
+		logger.info(() -> "Résolution avec " + solver);
 
 		long startingTime = System.currentTimeMillis();
 		
@@ -94,7 +94,7 @@ public class Scenarios {
 		
 		logger.info("Solution   => " + soluceDonjonBFS.getSoluce());
 		logger.info(() ->  "Temps (ms) => " + duration);
-		logger.info(() -> "Steps      => " + SolverGeneric.getSteps());
+		logger.info(() -> "Steps      => " + solver.getSteps());
 		logger.info(() -> "---------------------------");
 	}
 
