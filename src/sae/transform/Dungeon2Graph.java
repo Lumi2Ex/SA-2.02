@@ -1,10 +1,10 @@
-package graph;
+package sae.transform;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import sae.dungeon.Dungeon;
-import sae.dungeon.Room;
+import sae.graph.Graph;
+import sae.graph.Node;
 import sae.dungeon.*;
 
 public class Dungeon2Graph {
@@ -41,15 +41,11 @@ public class Dungeon2Graph {
     }
 
     private void createEdges() {
-        // pour chaque Room :
-    	for ( Room room : dungeon.getRooms()) {
-    		//1. retrouver son Node
-    		Node origin = roomToNode.get(room);
-    		// 2. parcourir ses voisins avec getNextRooms
-    		for (Room voisin : room.getNextRooms().values()) {
-    			// 3. relier les Node correspondants
-    			Node nodeVoisin = roomToNode.get(voisin);
-    			graph.addEdge(origin, nodeVoisin); //ligne qui fabrique le chemin
+    	for ( Room room : dungeon.getRooms()) {					// pour chaque Room 
+    		Node origin = roomToNode.get(room);					//1. retrouver son Node
+    		for (Room voisin : room.getNextRooms().values()) {	// 2. parcourir ses voisins avec getNextRooms
+    			Node nodeVoisin = roomToNode.get(voisin);		// 3. relier les Node correspondants
+    			graph.addEdge(origin, nodeVoisin); 				//ligne qui fabrique le chemin
     		}
     	}
     }

@@ -1,6 +1,7 @@
 package sae.solver;
 
 import sae.graph.Graph;
+import sae.graph.GraphSoluce;
 import sae.graph.Node;
 
 public abstract class SolverGeneric implements Solver{

@@ -28,7 +28,7 @@ public class Node {
 	@Override
 	public String toString() {
 		return "Node [name=" + name 
-				+ ", neighbors=" + neighbors 
+				+ ", nbNeighbors=" + neighbors.size()
 				+ ", coord=" + coord 
 				+ "]"; 
 		//auto génération
