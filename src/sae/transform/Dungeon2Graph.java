@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import sae.graph.Graph;
+import sae.graph.GraphSoluce;
 import sae.graph.Node;
 import sae.dungeon.*;
 
@@ -11,12 +12,16 @@ public class Dungeon2Graph {
 
     private Dungeon dungeon;
     private Graph graph;
-    private Map<Room, Node> roomToNode;
+    private Map<Room, Node> roomToNode; //bibliotheque de donjon vers graph
+    private Map<Node, Room> nodeToRoom;	//bibliotheque de graph vers donjon
 
+    
+    
     public Dungeon2Graph(Dungeon dungeon) {
         this.dungeon = dungeon;
         this.graph = new Graph();
         this.roomToNode = new HashMap<>();
+        this.nodeToRoom = new HashMap<>();
 
         buildGraph();
     }
@@ -31,6 +36,7 @@ public class Dungeon2Graph {
     		Node node = createNode(room);		//on appel un constructeur qui luis meme extraiera les donné de la Room pour les placé dans le constructeur de la class graph.Node
     		graph.addNode(node);				//on ajoute le noeud créer au graph
     		roomToNode.put(room, node);			// "mémorisation" de la correspondance room/node dans une map
+    		nodeToRoom.put(node, room);			// ajout de la mémorisation dans l'autre sens
     	}
     }
     
@@ -40,11 +46,11 @@ public class Dungeon2Graph {
         return new Node(room.getName(), nodeCoord);
     }
 
-    private void createEdges() {
+    private void createEdges() {								// similaire a create node
     	for ( Room room : dungeon.getRooms()) {					// pour chaque Room 
-    		Node origin = roomToNode.get(room);					//1. retrouver son Node
-    		for (Room voisin : room.getNextRooms().values()) {	// 2. parcourir ses voisins avec getNextRooms
-    			Node nodeVoisin = roomToNode.get(voisin);		// 3. relier les Node correspondants
+    		Node origin = roomToNode.get(room);					//retrouver son Node
+    		for (Room voisin : room.getNextRooms().values()) {	//parcourir ses voisins avec getNextRooms
+    			Node nodeVoisin = roomToNode.get(voisin);		//relier les Node correspondants
     			graph.addEdge(origin, nodeVoisin); 				//ligne qui fabrique le chemin
     		}
     	}
@@ -57,4 +63,26 @@ public class Dungeon2Graph {
     public Graph getGraph() {
         return graph;
     }
+    
+    public DungeonSoluce transform(GraphSoluce graphSoluce) {
+        DungeonSoluce dungeonSoluce = new DungeonSoluce();
+
+        // parcourir les nodes de la solution 2 par 2
+        // retrouver les Room correspondantes
+        // déterminer la Direction entre les deux Room
+        // ajouter la direction dans dungeonSoluce
+
+        return dungeonSoluce;
+    }
+    
+    private Direction findDirection(Room from, Room to) {
+        for (Map.Entry<Direction, Room> entry : from.getNextRooms().entrySet()) {
+            if (entry.getValue().equals(to)) {
+                return entry.getKey();
+            }
+        }
+        return null;
+    }
+    
+    
 }

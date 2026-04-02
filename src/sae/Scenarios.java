@@ -97,5 +97,4 @@ public class Scenarios {
 		logger.info(() -> "Steps      => " + solver.getSteps());
 		logger.info(() -> "---------------------------");
 	}
-
 }
