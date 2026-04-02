@@ -1,4 +1,4 @@
-package graph;
+package sae.graph;
 
 import java.util.HashSet;
 import java.util.Set;

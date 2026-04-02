@@ -1,7 +1,7 @@
-package solver;
+package sae.solver;
 
-import graph.Graph;
-import graph.Node;
+import sae.graph.Graph;
+import sae.graph.Node;
 
 public abstract class SolverGeneric implements Solver{
 

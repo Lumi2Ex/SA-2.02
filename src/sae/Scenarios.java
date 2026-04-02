@@ -7,11 +7,11 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-import graph.Node;
 import sae.dungeon.Dungeon;
 import sae.dungeon.DungeonBuilder;
 import sae.dungeon.DungeonSoluce;
 import sae.graph.GraphSoluce;
+import sae.graph.Node;
 import sae.solver.Solver;
 import sae.solver.SolverWithAstar;
 import sae.solver.SolverWithBFS;

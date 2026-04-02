@@ -1,4 +1,4 @@
-package solver;
+package sae.solver;
 
 public interface Solver {
 	public void solve();
