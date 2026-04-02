@@ -5,6 +5,7 @@ import java.util.Map;
 
 import sae.dungeon.Dungeon;
 import sae.dungeon.Room;
+import sae.dungeon.*;
 
 public class Dungeon2Graph {
 
@@ -34,8 +35,8 @@ public class Dungeon2Graph {
     }
     
     private Node createNode(Room room) {
-        sae.dungeon.Coord roomCoord = room.getCoords();
-        graph.Coord nodeCoord = new graph.Coord(roomCoord.getX(), roomCoord.getY());
+        Coord roomCoord = room.getCoords();
+        Coord nodeCoord = new Coord(roomCoord.getX(), roomCoord.getY());
         return new Node(room.getName(), nodeCoord);
     }
 
@@ -44,10 +45,13 @@ public class Dungeon2Graph {
     	for ( Room room : dungeon.getRooms()) {
     		//1. retrouver son Node
     		Node origin = roomToNode.get(room);
+    		// 2. parcourir ses voisins avec getNextRooms
+    		for (Room voisin : room.getNextRooms().values()) {
+    			// 3. relier les Node correspondants
+    			Node nodeVoisin = roomToNode.get(voisin);
+    			graph.addEdge(origin, nodeVoisin); //ligne qui fabrique le chemin
+    		}
     	}
-        // 1. retrouver son Node
-        // 2. parcourir ses voisins avec getNextRooms()
-        // 3. relier les Node correspondants
     }
 
     public Node mappedNode(Room room) {
