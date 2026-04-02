@@ -47,7 +47,7 @@ public class Dungeon2Graph {
     }
 
     private void createEdges() {								// similaire a create node
-    	for ( Room room : dungeon.getRooms()) {					// pour chaque Room 
+    	for (Room room : dungeon.getRooms()) {					// pour chaque Room 
     		Node origin = roomToNode.get(room);					//retrouver son Node
     		for (Room voisin : room.getNextRooms().values()) {	//parcourir ses voisins avec getNextRooms
     			Node nodeVoisin = roomToNode.get(voisin);		//relier les Node correspondants
@@ -66,11 +66,21 @@ public class Dungeon2Graph {
     
     public DungeonSoluce transform(GraphSoluce graphSoluce) {
         DungeonSoluce dungeonSoluce = new DungeonSoluce();
+        List<Node> nodes = graphSoluce.getSoluce();
 
-        // parcourir les nodes de la solution 2 par 2
-        // retrouver les Room correspondantes
-        // déterminer la Direction entre les deux Room
-        // ajouter la direction dans dungeonSoluce
+        for (int i = 0; i < nodes.size() - 1; i++) {
+            Node currentNode = nodes.get(i);
+            Node nextNode = nodes.get(i + 1);
+
+            Room currentRoom = nodeToRoom.get(currentNode);
+            Room nextRoom = nodeToRoom.get(nextNode);
+
+            Direction direction = findDirection(currentRoom, nextRoom);
+
+            if (direction != null) {
+                dungeonSoluce.addDirection(direction);
+            }
+        }
 
         return dungeonSoluce;
     }
