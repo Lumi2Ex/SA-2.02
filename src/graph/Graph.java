@@ -5,13 +5,11 @@ import java.util.Set;
 
 public class Graph {
 	
-	
-	
 	//il faut géré le fait que sur l'UML, un graph est composé de plusieur Node
 	//private List<Node> nodes; 
 	private Set<Node> nodes;//remplace List, aparament similaire en évitant les doublon automatiquement.
 	
-	Graph() {
+	public Graph() {
 		this.nodes = new HashSet<>();
 	}
 	
