@@ -1,5 +1,7 @@
 package graph;
 
+import sae.dungeon.*;
+
 public class test_maxime {
 
 	public static void main(String[] args) {
