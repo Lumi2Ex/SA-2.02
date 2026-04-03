@@ -32,14 +32,14 @@ public class Scenarios {
 		DungeonBuilder builder = new DungeonBuilder();
 
 		solveDungeon(builder.createThirdDungeon());
-		/*
-		 * solveDungeon(builder.createFirstDungeon());
+		
+		solveDungeon(builder.createFirstDungeon());
 		solveDungeon(builder.createSecondDungeon());
 		
 		solveDungeon(builder.createFourthDungeon());
 		solveDungeon(builder.createFifthDungeon());
 		solveDungeon(builder.createSixthDungeon());
-		*/
+		
 	}
 
 	private static void initLogger() {
