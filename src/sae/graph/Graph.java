@@ -19,7 +19,7 @@ public class Graph {
 	
 	public void addEdge(Node n1, Node n2) {
 		if (!nodes.contains(n1)) {
-		    addNode(n1);
+	    addNode(n1);
 		}
 		if (!nodes.contains(n2)) {
 		    addNode(n2);

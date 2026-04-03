@@ -64,7 +64,7 @@ public class SolverWithAstar extends SolverGeneric{
 	        closedSet.add(current);
 
 	        for (Node neighbor : current.neighbors()) {
-
+	        	incSteps();
 	            if (closedSet.contains(neighbor)) {
 	                continue;
 	            }

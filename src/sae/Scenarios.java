@@ -31,12 +31,15 @@ public class Scenarios {
 
 		DungeonBuilder builder = new DungeonBuilder();
 
-		solveDungeon(builder.createFirstDungeon());
-		solveDungeon(builder.createSecondDungeon());
 		solveDungeon(builder.createThirdDungeon());
+		/*
+		 * solveDungeon(builder.createFirstDungeon());
+		solveDungeon(builder.createSecondDungeon());
+		
 		solveDungeon(builder.createFourthDungeon());
 		solveDungeon(builder.createFifthDungeon());
 		solveDungeon(builder.createSixthDungeon());
+		*/
 	}
 
 	private static void initLogger() {
@@ -67,13 +70,35 @@ public class Scenarios {
 		logger.info("---------------------------");
 
 		Dungeon2Graph mapping = new Dungeon2Graph(dungeon);
+		
+		//Ligne de debugage// lors des premier test les resultat était aberrant j'ai donc voulu vérifié les resultat produit par GenerateDungeonfrom malgré la probabilité casi null que le fichier fourni est été modifié par l'un d'entre nous par erreur.
+//		System.out.println("1.\n");
+//		System.out.println("A room = " + dungeon.getRoomA());
+//		System.out.println("B room = " + dungeon.getRoomB());
+//
+//		for (sae.dungeon.Room room : dungeon.getRooms()) {
+//		    System.out.println(room.getName() + " " + room.getCoords() + " -> " + room.getNextRooms());
+//		}
+		//Ligne de debugage//
+		
 
 		Node nodeA = mapping.mappedNode(dungeon.getRoomA());
 		Node nodeB = mapping.mappedNode(dungeon.getRoomB());
 		
+		//Ligne de debugage// comparaison de logique avec le debugage des room, mais la structure semble identique le probleme n'est pas la (j'aurai du m'en douté c'est mon code il est forcement parfait)
+//		System.out.println("2.\n");
+//		System.out.println("Node A = " + nodeA);
+//		System.out.println("Node B = " + nodeB);
+//
+//		for (sae.graph.Node node : mapping.getGraph().getNodes()) {
+//		    System.out.println(node + " -> voisins = " + node.neighbors());
+//		}
+		//ligne de debugage//
+		
 		solveWithSolver(mapping, new SolverWithDFS(nodeA, nodeB));
 		solveWithSolver(mapping, new SolverWithBFS(nodeA, nodeB));
 		solveWithSolver(mapping, new SolverWithAstar(nodeA, nodeB));
+		
 		
 	}
 
@@ -89,9 +114,18 @@ public class Scenarios {
 		long duration = endingTime - startingTime;
 		
 		GraphSoluce soluceGraphBFS = solver.getGraphSoluce();
-
-		DungeonSoluce soluceDonjonBFS = mapping.transform(soluceGraphBFS);
 		
+		//Ligne de debugage// print du chemin pour verifier qu'il ne ce teleporte pas, mais nan c logique 
+//		System.out.println("3.\n");
+//		System.out.println("Chemin graphe :");
+//		for (Node n : soluceGraphBFS.getSoluce()) {
+//		    System.out.println(n);
+//		}
+//		System.out.println("Nb noeuds chemin = " + soluceGraphBFS.getSoluce().size());
+		//Ligne de debugage//
+		
+		DungeonSoluce soluceDonjonBFS = mapping.transform(soluceGraphBFS);
+
 		logger.info("Solution   => " + soluceDonjonBFS.getSoluce());
 		logger.info(() ->  "Temps (ms) => " + duration);
 		logger.info(() -> "Steps      => " + solver.getSteps());

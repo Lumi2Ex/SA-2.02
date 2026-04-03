@@ -59,7 +59,7 @@ public class Node {
 	//stack overflow recommande mais jsp a quoi sa sert donc ...
 	@Override
 	public int hashCode() {
-    	return Objects.hash(name);
+    	return Objects.hash(name, coord);
 	}
 	
 	

@@ -1,6 +1,7 @@
 package sae.transform;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import sae.graph.Graph;
@@ -77,9 +78,27 @@ public class Dungeon2Graph {
 
             Direction direction = findDirection(currentRoom, nextRoom);
 
+            //ligne de debugage// suivi de l'état et de la "reflexion" du code... CPT... c'est bon c'était une ligne mal écrite.
+//            System.out.println("4.\n");
+//            System.out.println("currentNode = " + currentNode);
+//            System.out.println("nextNode = " + nextNode);
+//            System.out.println("currentRoom = " + currentRoom);
+//            System.out.println("nextRoom = " + nextRoom);
+//            System.out.println("direction = " + direction);
+//            System.out.println("---");
+            //Ligne de debugage//
+            
+            
             if (direction != null) {
                 dungeonSoluce.addDirection(direction);
             }
+            //Ligne de debuage//
+//            System.out.println("6.\n");
+//            if (direction == null) {
+//                throw new IllegalStateException("Direction introuvable entre " + currentRoom + " et " + nextRoom);
+//            }
+//            dungeonSoluce.addDirection(direction);
+            //Ligne de debugage//
         }
 
         return dungeonSoluce;
