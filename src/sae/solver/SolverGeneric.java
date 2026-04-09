@@ -52,6 +52,5 @@ public abstract class SolverGeneric implements Solver{
     private void initializeResolution() {
         this.steps = 0;
         this.GraphSoluce = new GraphSoluce();
-        // Additional initialization logic here
     }
 }

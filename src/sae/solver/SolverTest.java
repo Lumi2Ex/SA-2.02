@@ -17,7 +17,7 @@ public class SolverTest {
 
         Node[][] nodes = new Node[3][3];
 
-        // Create nodes
+        // Créer Noeuds
         for (int x = 0; x < 3; x++) {
             for (int y = 0; y < 3; y++) {
                 nodes[x][y] = new Node("Test", new Coord(x, y));
@@ -25,7 +25,6 @@ public class SolverTest {
             }
         }
 
-        // Connect nodes using Graph (IMPORTANT FIX)
         for (int x = 0; x < 3; x++) {
             for (int y = 0; y < 3; y++) {
 
@@ -69,7 +68,7 @@ public class SolverTest {
 
     private static void printPath(List<Node> path) {
         if (path == null || path.isEmpty()) {
-            System.out.println("No path found");
+            System.out.println("Pas de chemin");
             return;
         }
 

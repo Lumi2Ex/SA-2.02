@@ -1,0 +1,15 @@
+      B
+      |
+o     o   o
+|     |   |
+o-o-o-o   o-o-o
+      |       |   
+      o-o-o-o-o
+      |
+  o   o
+  |   |
+o o-o o-----o
+| | | |     |
+o-o o-o-o-o-o
+|     | |
+o     A o
