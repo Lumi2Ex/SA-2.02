@@ -38,13 +38,13 @@ public class SolverTest {
         Node start = nodes[0][0];
         Node end = nodes[2][2];
 
-        System.out.println("=== DFS ===");
+        System.out.println("DFS");
         testDFS(start, end);
 
-        System.out.println("\n=== BFS ===");
+        System.out.println("\nBFS");
         testBFS(start, end);
 
-        System.out.println("\n=== A* ===");
+        System.out.println("\nA*");
         testAStar(start, end);
     }
 

@@ -10,8 +10,8 @@ public class SolverWithDFS extends SolverGeneric {
     private Map<Node, Node> predecessors;
     private boolean found;
 
-    public SolverWithDFS(Node startingNode, Node endingNode) {
-        super(startingNode, endingNode, "DFS");
+    public SolverWithDFS(Node start, Node end) {
+        super(start, end, "DFS");
     }
 
     @Override

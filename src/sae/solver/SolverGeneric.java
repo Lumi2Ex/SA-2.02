@@ -11,16 +11,16 @@ public abstract class SolverGeneric implements Solver{
 		return this.nom;
 	}
 
-	private Node startingNode;
-    private Node endingNode;
+	private Node start;
+    private Node end;
     private int steps;
     
     private GraphSoluce GraphSoluce;
 	private String nom;
     
     public SolverGeneric(Node start, Node end, String nom) {
-    	this.startingNode = start;
-        this.endingNode = end;
+    	this.start = start;
+        this.end = end;
         this.steps = 0;
         this.GraphSoluce = new GraphSoluce();
         this.nom = nom;
@@ -41,11 +41,11 @@ public abstract class SolverGeneric implements Solver{
     }
     
     public Node getStartingNode() {
-        return this.startingNode;
+        return this.start;
     }
 
     public Node getEndingNode() {
-        return this.endingNode;
+        return this.end;
     }
     
     @Override
