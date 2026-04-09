@@ -39,7 +39,7 @@ public class Scenarios {
 		solveDungeon(builder.createFourthDungeon());
 		solveDungeon(builder.createFifthDungeon());
 		solveDungeon(builder.createSixthDungeon());
-		
+		solveDungeon(builder.createSeventhDungeon());
 		solveDungeon(builder.createEightDungeon());
 		
 		//un bug de mon éclipse, ne m'affiche pas les 10 dernier ligne de la console, ces ligne prenne la place de ce bug logiciel.
