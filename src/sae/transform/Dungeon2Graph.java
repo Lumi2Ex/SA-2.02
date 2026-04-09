@@ -107,9 +107,9 @@ public class Dungeon2Graph {
     }
     
     private Direction findDirection(Room from, Room to) {
-        for (Map.Entry<Direction, Room> entry : from.getNextRooms().entrySet()) {
-            if (entry.getValue().equals(to)) {
-                return entry.getKey();
+        for (Map.Entry<Direction, Room> entrer : from.getNextRooms().entrySet()) {
+            if (entrer.getValue().equals(to)) {
+                return entrer.getKey();
             }
         }
         return null;

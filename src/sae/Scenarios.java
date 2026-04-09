@@ -40,6 +40,20 @@ public class Scenarios {
 		solveDungeon(builder.createFifthDungeon());
 		solveDungeon(builder.createSixthDungeon());
 		
+		solveDungeon(builder.createEightDungeon());
+		
+		//un bug de mon éclipse, ne m'affiche pas les 10 dernier ligne de la console, ces ligne prenne la place de ce bug logiciel.
+		System.out.println(" débugage ");
+		System.out.println(" débugage ");
+		System.out.println(" débugage ");
+		System.out.println(" débugage ");
+		System.out.println(" débugage ");
+		System.out.println(" débugage ");
+		System.out.println(" débugage ");
+		System.out.println(" débugage ");
+		System.out.println(" débugage ");
+		System.out.println(" débugage ");
+		System.out.println(" débugage ");
 	}
 
 	private static void initLogger() {
