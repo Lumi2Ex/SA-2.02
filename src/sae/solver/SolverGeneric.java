@@ -6,17 +6,24 @@ import sae.graph.Node;
 
 public abstract class SolverGeneric implements Solver{
 
-    private Node startingNode;
+    @Override
+	public String toString() {
+		return this.nom;
+	}
+
+	private Node startingNode;
     private Node endingNode;
     private int steps;
     
     private GraphSoluce GraphSoluce;
+	private String nom;
     
-    public SolverGeneric(Node start, Node end) {
+    public SolverGeneric(Node start, Node end, String nom) {
     	this.startingNode = start;
         this.endingNode = end;
         this.steps = 0;
         this.GraphSoluce = new GraphSoluce();
+        this.nom = nom;
     }
     
    @Override 

@@ -22,7 +22,7 @@ public class SolverWithAstar extends SolverGeneric{
     private boolean found;
 
 	public SolverWithAstar(Node start, Node end) {
-		super(start, end);
+		super(start, end, "A*");
 	}
 	
 	public int heuristic(Node start, Node end) {

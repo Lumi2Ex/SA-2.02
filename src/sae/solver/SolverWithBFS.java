@@ -12,7 +12,7 @@ public class SolverWithBFS extends SolverGeneric {
     private boolean found;
 
     public SolverWithBFS(Node start, Node end) {
-        super(start, end);
+        super(start, end, "BFS");
     }
 
     public void BFS(Node start) {

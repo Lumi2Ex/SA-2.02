@@ -11,7 +11,7 @@ public class SolverWithDFS extends SolverGeneric {
     private boolean found;
 
     public SolverWithDFS(Node startingNode, Node endingNode) {
-        super(startingNode, endingNode);
+        super(startingNode, endingNode, "DFS");
     }
 
     @Override
