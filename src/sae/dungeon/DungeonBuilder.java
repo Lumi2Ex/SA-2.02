@@ -117,22 +117,22 @@ public class DungeonBuilder {
 
 
 	public Dungeon createThirdDungeon() {	
-		String data = Util.usingBufferedReader("Donjon.txt");
-		return (new GeneratorDungeonFrom(data)).getDungeon();
-	}
-	
-	public Dungeon createFourthDungeon() {	
-		String data = Util.usingBufferedReader("Donjon2.txt");
-		return (new GeneratorDungeonFrom(data)).getDungeon();
-	}
-	
-	public Dungeon createFifthDungeon() {	
 		String data = Util.usingBufferedReader("Donjon3.txt");
 		return (new GeneratorDungeonFrom(data)).getDungeon();
 	}
 	
-	public Dungeon createSixthDungeon() {	
+	public Dungeon createFourthDungeon() {	
 		String data = Util.usingBufferedReader("Donjon4.txt");
+		return (new GeneratorDungeonFrom(data)).getDungeon();
+	}
+	
+	public Dungeon createFifthDungeon() {	
+		String data = Util.usingBufferedReader("Donjon5.txt");
+		return (new GeneratorDungeonFrom(data)).getDungeon();
+	}
+	
+	public Dungeon createSixthDungeon() {	
+		String data = Util.usingBufferedReader("Donjon6.txt");
 		return (new GeneratorDungeonFrom(data)).getDungeon();
 	}
 

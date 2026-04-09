@@ -62,7 +62,7 @@ public class test_maxime {
 		    System.out.println(room.getName() + " -> rooms voisins: " + nbRooms + ", nodes voisins: " + nbNodes);
 		    }
 		//OK//
-		*/
+		
 		Dungeon dungeon = new DungeonBuilder().createFifthDungeon();
 		Dungeon2Graph mapping = new Dungeon2Graph(dungeon);
 
@@ -70,6 +70,8 @@ public class test_maxime {
 		System.out.println("Nodes : " + mapping.getGraph().getNodes().size());
 		System.out.println("Start : " + mapping.mappedNode(dungeon.getRoomA()));
 		System.out.println("End : " + mapping.mappedNode(dungeon.getRoomB()));
+		*/
 		}
+		
 	}
 
