@@ -6,7 +6,7 @@ public class GraphSoluce {
 	
 	private List<Node> soluce; 
 	
-	// FIXME : remplir constructeur
+
 	public GraphSoluce() {
 		this.soluce = new ArrayList<>();
 	}

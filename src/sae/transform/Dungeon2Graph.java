@@ -1,5 +1,5 @@
 package sae.transform;
-
+//by maxime
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,9 +14,9 @@ public class Dungeon2Graph {
     private Dungeon dungeon;
     private Graph graph;
     private Map<Room, Node> roomToNode; //bibliotheque de donjon vers graph
-    private Map<Node, Room> nodeToRoom;	//bibliotheque de graph vers donjon
+    private Map<Node, Room> nodeToRoom;	//bibliotheque de graph ver donjon
 
-    
+    /// CONSTRUCTEUR ///
     
     public Dungeon2Graph(Dungeon dungeon) {
         this.dungeon = dungeon;
@@ -24,7 +24,7 @@ public class Dungeon2Graph {
         this.roomToNode = new HashMap<>();
         this.nodeToRoom = new HashMap<>();
 
-        buildGraph();
+        buildGraph();/// blanc normal
     }
 
     private void buildGraph() {
@@ -32,19 +32,19 @@ public class Dungeon2Graph {
         createEdges();
     }
 
-    private void createNodes() {
+    private void createNodes() {				// décomposition car cette fonction m'a posé probleme
     	for ( Room room : dungeon.getRooms()) {	// Pour chaque room présente dans la "list" Room
-    		Node node = createNode(room);		//on appel un constructeur qui luis meme extraiera les donné de la Room pour les placé dans le constructeur de la class graph.Node
-    		graph.addNode(node);				//on ajoute le noeud créer au graph
+    		Node node = createNode(room);		// on appel un constructeur qui luis meme extraiera les donné de la Room pour les placé dans le constructeur de la class graph.Node
+    		graph.addNode(node);				// on ajoute le noeud créer au graph
     		roomToNode.put(room, node);			// "mémorisation" de la correspondance room/node dans une map
     		nodeToRoom.put(node, room);			// ajout de la mémorisation dans l'autre sens
     	}
     }
     
-    private Node createNode(Room room) {
-        Coord roomCoord = room.getCoords();
-        Coord nodeCoord = new Coord(roomCoord.getX(), roomCoord.getY());
-        return new Node(room.getName(), nodeCoord);
+    private Node createNode(Room room) {		
+        Coord roomCoord = room.getCoords();		// attribution des valeurs de co
+        Coord nodeCoord = new Coord(roomCoord.getX(), roomCoord.getY());	// on colle les valeur dans un node pour la suite
+        return new Node(room.getName(), nodeCoord);		// on créer le noeud, et on luis file son nom avec les coordoné exploitable (jsuis trop fort)
     }
 
     private void createEdges() {								// similaire a create node
@@ -56,7 +56,8 @@ public class Dungeon2Graph {
     		}
     	}
     }
-
+    
+    
     public Node mappedNode(Room room) {
         return roomToNode.get(room);
     }
@@ -92,6 +93,7 @@ public class Dungeon2Graph {
             if (direction != null) {
                 dungeonSoluce.addDirection(direction);
             }
+            
             //Ligne de debuage//
 //            System.out.println("6.\n");
 //            if (direction == null) {
